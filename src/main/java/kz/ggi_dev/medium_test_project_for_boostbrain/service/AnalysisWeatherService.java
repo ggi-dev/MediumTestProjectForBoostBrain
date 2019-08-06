@@ -45,11 +45,11 @@ public class AnalysisWeatherService {
             if (lw.getMain().getTempMin() < listWeatherWithMinTemp.getMain().getTempMin())
                 listWeatherWithMinTemp = lw;
         }
-        data.getValue().setValue(String.format(
+        restResponseForAnalysis.setValue(String.format(
                 TIME_AND_TEMP_STRING_PATTERN,
                 listWeatherWithMinTemp.getDt(),
                 listWeatherWithMinTemp.getMain().getTempMin()));
-        return data.getValue();
+        return restResponseForAnalysis;
     }
 
     public  RestResponseForAnalysis analysisMaxTempForFiveDays(final String city, final String country) {
@@ -61,11 +61,11 @@ public class AnalysisWeatherService {
             if (lw.getMain().getTempMax() > listWeatherWithMaxTemp.getMain().getTempMax())
                 listWeatherWithMaxTemp = lw;
         }
-        data.getValue().setValue(String.format(
+        restResponseForAnalysis.setValue(String.format(
                 TIME_AND_TEMP_STRING_PATTERN,
                 listWeatherWithMaxTemp.getDt(),
                 listWeatherWithMaxTemp.getMain().getTempMax()));
-        return data.getValue();
+        return restResponseForAnalysis;
     }
 
     public  RestResponseForAnalysis analysisAverageTempForFiveDays(final String city, final String country) {
@@ -78,10 +78,10 @@ public class AnalysisWeatherService {
             sumTemp += lw.getMain().getTemp();
             count++;
         }
-        data.getValue().setValue(String.format(
+        restResponseForAnalysis.setValue(String.format(
                 AVERAGE_TEMP_STRING_PATTERN,
                 sumTemp / count));
-        return data.getValue();
+        return restResponseForAnalysis;
     }
 
     private Pair<WeatherForecastForCity, RestResponseForAnalysis> prepareDataForAnalysis(final String city, final String country) {
