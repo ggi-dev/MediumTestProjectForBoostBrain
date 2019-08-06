@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="windows-1251">
+    <title>REST API Service</title>
+</head>
+<body>
+    <h1 align="center">REST API Service</h1>
+    <div align="center" style="border:1px #777 solid; padding: 20px; margin: 20px">
+        <p>Для запроса необходимо в GET указать имя города и код страны.</p>
+        <h1 align="center">Примеры</h1>
+        <p><b>/weather/five-days/analysis/averagetemp?city=Moscow&country=ru</b> данный запрос выводит среднюю
+            температуру (кельвин) на будущие пять дней для г. Москва</p>
+        <p><b>/weather/five-days/analysis/mintemp?city=Moscow&country=ru</b> данный запрос выводит минимальную
+            температуру (кельвин) за будущие пять дней для г. Москва с указанием даты и времени(в миллисекундах)</p>
+        <p><b>/weather/five-days/analysis/maxtemp?city=Moscow&country=ru</b> данный запрос выводит максимальную
+            температуру (кельвин) за будущие пять дней для г. Москва с указанием даты и времени(в миллисекундах)</p>
+    </div>
+</body>
+</html>
